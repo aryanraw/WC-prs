@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Languages</title>
+</head>
+<body>
+  <button id="countButton">Count Languages</button>
+  <p id="result"></p>
+
+  <script>
+    // Define an array of languages
+    const languages = ['JavaScript', 'Python', 'Java', 'C++', 'Ruby', 'Swift', 'PHP', 'C#'];
+
+    // Get the button and result element by their IDs
+    const countButton = document.getElementById('countButton');
+    const resultElement = document.getElementById('result');
+
+    // Add a click event listener to the button
+    countButton.addEventListener('click', function () {
+      // Count the number of languages
+      const numberOfLanguages = languages.length;
+
+      // Create a string to display the languages and their count
+      const resultString = `Number of languages: ${numberOfLanguages}<br>Languages: ${languages.join(', ')}`;
+
+      // Update the result element's HTML
+      resultElement.innerHTML = resultString;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="button" id="loginButton">Login</button>
+      </div>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    // Function to handle form submission
+    document.getElementById("loginButton").addEventListener("click", function () {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "student" && password === "password") {
+        document.getElementById("message").textContent = "Login successful!";
+      } else {
+        document.getElementById("message").textContent = "Login failed. Please check your username and password.";
+      }
+    });
+  </script>
+</body>
+</html>
