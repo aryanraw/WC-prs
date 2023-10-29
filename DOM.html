@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Manipulation with JavaScript</title>
+</head>
+<body>
+  <h1>HTML Manipulation with JavaScript</h1>
+
+  <div id="content"></div>
+
+  <script>
+    // Function to create and append an HTML link
+    function createLink() {
+      const link = document.createElement("a");
+      link.href = "https://www.example.com";
+      link.textContent = "Visit Example.com";
+      document.getElementById("content").appendChild(link);
+    }
+
+    // Function to create and append an HTML image
+    function createImage() {
+      const image = document.createElement("img");
+      image.src = "https://www.example.com/image.jpg";
+      image.alt = "Example Image";
+      document.getElementById("content").appendChild(image);
+    }
+
+    // Function to create and append an HTML table
+    function createTable() {
+      const table = document.createElement("table");
+      const tbody = document.createElement("tbody");
+
+      for (let i = 0; i < 3; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < 3; j++) {
+          const cell = document.createElement(i === 0 ? "th" : "td");
+          cell.textContent = `Row ${i + 1}, Col ${j + 1}`;
+          row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+      }
+
+      table.appendChild(tbody);
+      document.getElementById("content").appendChild(table);
+    }
+
+    // Add buttons to trigger the creation of links, images, and tables
+    const linkButton = document.createElement("button");
+    linkButton.textContent = "Create Link";
+    linkButton.addEventListener("click", createLink);
+
+    const imageButton = document.createElement("button");
+    imageButton.textContent = "Create Image";
+    imageButton.addEventListener("click", createImage);
+
+    const tableButton = document.createElement("button");
+    tableButton.textContent = "Create Table";
+    tableButton.addEventListener("click", createTable);
+
+    document.getElementById("content").appendChild(linkButton);
+    document.getElementById("content").appendChild(imageButton);
+    document.getElementById("content").appendChild(tableButton);
+  </script>
+</body>
+</html>
